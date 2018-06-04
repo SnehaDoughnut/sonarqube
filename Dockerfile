@@ -1,7 +1,8 @@
 FROM sonarqube:7.1
 ENV LDAP_PASSWD=""
 ENV PATH $PATH:$SONARQUBE_HOME/bin 
- 
+ENV LDAP_CONTAINER_NAME="" 
+ENV LDAP_PORT=389
  
 
 WORKDIR /opt/sonarqube/extensions/plugins
