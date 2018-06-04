@@ -11,4 +11,6 @@ COPY ./sonar.properties /opt/sonarqube/conf/
 
 WORKDIR $SONARQUBE_HOME
 COPY entrpoint.sh ./bin/
+COPY run.sh ./bin/
+RUN chmod +x ./bin/*
 ENTRYPOINT ["entrpoint.sh"]
