@@ -12,7 +12,8 @@ WORKDIR /opt/sonarqube/extensions/plugins
 RUN wget http://sonarsource.bintray.com/Distribution/sonar-ldap-plugin/sonar-ldap-plugin-2.2.0.608.jar
 #RUN cp /opt/sonarqube/conf/sonar.properties /opt/sonarqube/conf/sonar.properties.orig
 COPY ./sonar.properties /opt/sonarqube/conf/
-
+COPY filebeat.yml /etc/filebeat/
+RUN chmod go-w /etc/filebeat/filebeat.yml
 WORKDIR $SONARQUBE_HOME
 COPY entrpoint.sh ./bin/
 COPY run.sh ./bin/
